@@ -35,6 +35,7 @@ public abstract class BaseBackServlet extends HttpServlet {
 	protected ReviewDAO reviewDAO = new ReviewDAO();
 	protected UserDAO userDAO = new UserDAO();
 
+	// 确定每个url的最终处理方式
 	public void service(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			
@@ -54,10 +55,10 @@ public abstract class BaseBackServlet extends HttpServlet {
 			
 			/*借助反射，调用对应的方法*/
 			String method = (String) request.getAttribute("method");
+			// 通过方法名和参数拿到方法对象,并调用,获得返回值
 			Method m = this.getClass().getMethod(method, HttpServletRequest.class,
 					HttpServletResponse.class,Page.class);
 			String redirect = m.invoke(this,request, response,page).toString();
-			
 			/*根据方法的返回值，进行相应的客户端跳转，服务端跳转，或者仅仅是输出字符串*/
 			
 			if(redirect.startsWith("@"))
@@ -73,6 +74,7 @@ public abstract class BaseBackServlet extends HttpServlet {
 			throw new RuntimeException(e);
 		}
 	}
+	// 处理上传文件的方法
 	public InputStream parseUpload(HttpServletRequest request, Map<String, String> params) {
 			InputStream is =null;
 			try {

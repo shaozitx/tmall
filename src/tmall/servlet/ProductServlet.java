@@ -1,5 +1,6 @@
 package tmall.servlet;
 
+import tmall.bean.Category;
 import tmall.bean.Product;
 import tmall.bean.User;
 import tmall.util.Page;
@@ -30,10 +31,10 @@ public class ProductServlet extends BaseBackServlet {
     public String list(HttpServletRequest request, HttpServletResponse response, Page page) {
         List<Product> cs = productDAO.list(page.getStart(),page.getCount());
         int cid = Integer.parseInt(request.getParameter("cid"));
-
+        Category c = categoryDAO.get(cid);
         int total = productDAO.getTotal(cid);
         page.setTotal(total);
-
+        request.setAttribute("cname",c.getName());
         request.setAttribute("thecs", cs);
         request.setAttribute("page", page);
 

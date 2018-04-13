@@ -20,6 +20,7 @@ import java.util.Map;
 public class CategoryServlet extends BaseBackServlet {
 	
 	public String add(HttpServletRequest request, HttpServletResponse response, Page page) {
+		// 处理参数,包括一般参数和文件上传
 		Map<String,String> params = new HashMap<>();
 		InputStream is = super.parseUpload(request, params);
 		
@@ -42,9 +43,8 @@ public class CategoryServlet extends BaseBackServlet {
 			        fos.flush();
 			        //通过如下代码，把文件保存为jpg格式
 			        BufferedImage img = ImageUtil.change2jpg(file);
-			        ImageIO.write(img, "jpg", file);		
-			    }
-			    catch(Exception e){
+			        ImageIO.write(img, "jpg", file);
+			    }catch(Exception e){
 			    	e.printStackTrace();
 			    }
 			}
@@ -99,7 +99,7 @@ public class CategoryServlet extends BaseBackServlet {
 			        fos.flush();
 			        //通过如下代码，把文件保存为jpg格式
 			        BufferedImage img = ImageUtil.change2jpg(file);
-			        ImageIO.write(img, "jpg", file);		
+					ImageIO.write(img, "jpg", file);
 			    }
 			    catch(Exception e){
 			    	e.printStackTrace();
