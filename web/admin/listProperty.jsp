@@ -15,7 +15,10 @@ $(function(){
 			return false;
 		return true;
 	});
+
+
 });
+
 
 </script>
 
@@ -23,9 +26,11 @@ $(function(){
 
 
 <div class="workingArea">
-	<h1 class="label label-info" >属性管理</h1>
-	<br>
-	<br>
+	<ol class="breadcrumb">
+		<li><a href="#">全部分类</a></li>
+		<li><a href="#">${ca.name} </a></li>
+		<li class="active">属性管理 </li>
+	</ol>
 	
 	<div class="listDataTableDiv">
 		<table class="table table-striped table-bordered table-hover  table-condensed">
@@ -59,12 +64,14 @@ $(function(){
 	<div class="panel panel-warning addDiv">
 	  <div class="panel-heading">新增属性</div>
 	  <div class="panel-body">
-	    	<form method="post" id="addForm" action="admin_category_add" enctype="multipart/form-data">
+	    	<form method="post" id="addForm" action="admin_property_add" >
 	    		<table class="addTable">
 	    			<tr>
 	    				<td>属性名称</td>
 	    				<td><input  id="name" name="name" type="text" class="form-control"></td>
-	    			</tr>
+						<td ><input id = "cid" name = "cid" type = "hidden"  value="${ca.id}"></td>
+
+					</tr>
 
 	    			<tr class="submitTR">
 	    				<td colspan="2" align="center">
@@ -79,3 +86,36 @@ $(function(){
 </div>
 
 <%@include file="../admin/adminFooter.jsp"%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

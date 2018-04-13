@@ -14,8 +14,11 @@
 
 
 <div class="workingArea">
-	<h1 class="label label-info" >产品管理</h1>
-	<br>
+	<ol class="breadcrumb">
+		<li><a href="#">全部分类</a></li>
+		<li><a href="#">${cname} </a></li>
+		<li class="active">产品管理 </li>
+	</ol>	<br>
 	<br>
 	
 	<div class="listDataTableDiv">
