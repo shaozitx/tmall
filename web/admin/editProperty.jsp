@@ -16,7 +16,7 @@
 
     <ol class="breadcrumb">
         <li><a href="admin_category_list">所有分类</a></li>
-        <li><a href="admin_category_list">${cname}</a></li>
+        <li><a href="admin_category_list">${ca.name}</a></li>
         <li class="active">编辑属性</li>
     </ol>
 
@@ -28,8 +28,9 @@
                     <tr>
                         <td>属性名称</td>
                         <td><input  id="name" name="name" value="${c.name}" type="text" class="form-control"></td>
-                        <td display = "none"><input id = "cid" value="${cid} "></td>
+                        <td ><input name = "cid" type="hidden" value="${ca.id}"></td>
                     </tr>
+
 
                     <tr class="submitTR">
                         <td colspan="2" align="center">

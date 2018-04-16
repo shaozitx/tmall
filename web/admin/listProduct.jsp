@@ -16,7 +16,7 @@
 <div class="workingArea">
 	<ol class="breadcrumb">
 		<li><a href="#">全部分类</a></li>
-		<li><a href="#">${cname} </a></li>
+		<li><a href="#">${ca.name} </a></li>
 		<li class="active">产品管理 </li>
 	</ol>	<br>
 	<br>
@@ -49,8 +49,8 @@
 					<td>${c.orignalPrice}</td>
 					<td>${c.promotePrice}</td>
 					<td>${c.stock}</td>
-					<td>${c.name}</td>
-					<td>${c.name}</td>
+					<td><a href="admin_product_pic?id=${c.id}"><span class="glyphicon glyphicon-picture"></span></a></td>
+					<td><a href="admin_product_set?id=${c.id}"><span class="glyphicon glyphicon-list"></span></a></td>
 					<td><a href="admin_product_edit?id=${c.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
 					<td><a deleteLink="true" href="admin_product_delete?id=${c.id}"><span class=" 	glyphicon glyphicon-trash"></span></a></td>
 	
@@ -63,7 +63,42 @@
 	<div class="pageDiv">
 		<%@include file="../admin/adminPage.jsp" %>
 	</div>
-	
+	<div class="panel panel-warning addDiv">
+		<div class="panel-heading">新增产品</div>
+		<div class="panel-body">
+			<form method="post" id="addForm" action="admin_product_add" >
+				<table class="addTable">
+					<tr>
+						<td>产品名称</td>
+						<td><input  id="name" name="name" type="text" class="form-control"></td>
+					</tr>
+					<tr>
+						<td>产品小标题</td>
+						<td><input  id="subTitle" name="subTitle" type="text" value="10" class="form-control"></td>
+
+					</tr>
+					<tr>
+						<td>原价格</td>
+						<td><input  id="orignalPrice" name="orignalPrice" type="text" value="10" class="form-control"></td>
+					</tr>
+					<tr>
+						<td>优惠价格</td>
+						<td><input  id="promotePrice" name="promotePrice" type="text" value="10" class="form-control"></td>
+					</tr>
+					<tr>
+						<td>库存</td>
+						<td><input  id="stock" name="stock" type="text" value="10" class="form-control"></td>
+					</tr>
+					<tr class="submitTR">
+						<td colspan="2" align="center">
+							<input   name="cid" type="hidden" value=${ca.id} >
+							<button type="submit" class="btn btn-success">提 交</button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
 
 	
 </div>

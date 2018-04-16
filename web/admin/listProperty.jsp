@@ -6,18 +6,6 @@
 <%@include file="../admin/adminNavigator.jsp"%>
 
 <script>
-$(function(){
-	
-	$("#addForm").submit(function(){
-		if(!checkEmpty("name","分类名称"))
-			return false;
-		if(!checkEmpty("categoryPic","分类图片"))
-			return false;
-		return true;
-	});
-
-
-});
 
 
 </script>
@@ -28,7 +16,7 @@ $(function(){
 <div class="workingArea">
 	<ol class="breadcrumb">
 		<li><a href="#">全部分类</a></li>
-		<li><a href="#">${ca.name} </a></li>
+		<li><a href="admin_category_list">${ca.name} </a></li>
 		<li class="active">属性管理 </li>
 	</ol>
 	
@@ -48,8 +36,8 @@ $(function(){
 				<tr>
 					<td>${c.id}</td>
 					<td>${c.name}</td>
-					<td><a href="admin_category_edit?id=${c.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
-					<td><a deleteLink="true" href="admin_category_delete?id=${c.id}"><span class=" 	glyphicon glyphicon-trash"></span></a></td>
+					<td><a href="admin_property_edit?id=${c.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
+					<td><a deleteLink="true" href="admin_property_delete?id=${c.id}"><span class=" 	glyphicon glyphicon-trash"></span></a></td>
 	
 				</tr>
 				</c:forEach>
@@ -86,36 +74,5 @@ $(function(){
 </div>
 
 <%@include file="../admin/adminFooter.jsp"%>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
