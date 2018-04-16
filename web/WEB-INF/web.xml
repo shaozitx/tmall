@@ -45,6 +45,26 @@
         <url-pattern>/propertyServlet</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>tmall.servlet.OrderServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/orderServlet</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+
+
+
+
+
     <filter>
         <filter-name>EncodingFilter</filter-name>
         <filter-class>tmall.filter.EncodingFilter</filter-class>
